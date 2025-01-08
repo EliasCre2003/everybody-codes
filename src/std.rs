@@ -26,7 +26,7 @@ pub trait Quest {
 pub fn get_inputs(quest_number: u8, test: bool) -> Result<Vec<String>, Error> {
     let mut inputs = Vec::new();
     let file_path = format!(
-        "src/inputs/quest{}/{}/",
+        "inputs/quest{}/{}/",
         quest_number,
         if test { "tests" } else { "inputs" }
     );
