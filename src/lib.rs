@@ -1,3 +1,3 @@
 pub mod std;
 
-pub mod quest1;
+pub mod quests;

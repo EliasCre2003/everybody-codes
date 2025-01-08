@@ -1,19 +1,14 @@
 use std::{
     fs::File,
-    io::{Error, ErrorKind, Read},
-    str::FromStr,
+    io::{Error, Read},
     vec,
 };
-
-use std::env;
-use std::path::PathBuf;
 
 pub trait Quest {
     fn part1(&self, input: &str) -> String;
     fn part2(&self, input: &str) -> String;
     fn part3(&self, input: &str) -> String;
     fn all(&self, inputs: Vec<String>) -> Vec<String> {
-        let string_extract = |index: usize| inputs.get(index).unwrap();
         vec![
             self.part1(&inputs.get(0).unwrap()),
             self.part2(&inputs.get(1).unwrap()),

@@ -1,7 +1,5 @@
-use everybody_codes::{
-    quest1::Quest1,
-    std::{get_inputs, Quest},
-};
+use everybody_codes::quests::quest1::Quest1;
+use everybody_codes::std::{get_inputs, Quest};
 
 fn main() {
     let test = false;
