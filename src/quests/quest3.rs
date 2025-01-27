@@ -1,7 +1,7 @@
 
 use std::str::FromStr;
 
-use crate::std::Quest;
+use crate::std::Quest::Quest;
 
 pub struct Quest3 {}
 

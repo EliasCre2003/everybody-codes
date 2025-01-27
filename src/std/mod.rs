@@ -1,24 +1,10 @@
-use std::{
-    fs::File,
-    io::{Error, Read},
-    vec,
-};
+use std::{fs::File, io::{Error, Read}};
 
-pub trait Quest {
-    fn part1(&self, input: &str) -> String;
-    fn part2(&self, input: &str) -> String;
-    fn part3(&self, input: &str) -> String;
-    fn all(&self, inputs: Vec<String>) -> Vec<String> {
-        vec![
-            self.part1(&inputs.get(0).unwrap()),
-            self.part2(&inputs.get(1).unwrap()),
-            self.part3(&inputs.get(2).unwrap()),
-        ]
-    }
-    fn number(&self) -> u8;
-}
+pub mod Quest;
 
-pub fn get_inputs(quest_number: u8, test: bool) -> Result<Vec<String>, Error> {
+pub mod Grid;
+
+pub fn get_inputs(quest_number: u8, test: bool) -> Result<(String, String, String), Error> {
     let mut inputs = Vec::new();
     let file_path = format!(
         "inputs/quest{}/{}/",
@@ -39,5 +25,9 @@ pub fn get_inputs(quest_number: u8, test: bool) -> Result<Vec<String>, Error> {
         };
         inputs.push(input);
     }
-    Ok(inputs)
+    Ok((
+        inputs.get(0).unwrap().clone(),
+        inputs.get(1).unwrap().clone(),
+        inputs.get(2).unwrap().clone(),
+    ))
 }
